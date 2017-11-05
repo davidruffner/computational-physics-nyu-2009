@@ -1,0 +1,18 @@
+import sys
+
+
+filename = "testFile.txt"
+
+try:
+    testFile = open(filename)
+except IOError, e:#the error message is saved in e
+    print "Cant open the file, here is the error message"
+    print e
+    sys.exit()
+    
+for line in testFile:
+    if "#" in line:
+        continue
+    print line
+
+print "done"
